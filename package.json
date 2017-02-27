@@ -1,0 +1,40 @@
+{
+  "name": "sq-ts",
+  "version": "1.0.1",
+  "description": "Generic transaction manager for nodejs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "co": "MichaelDiguet/co"
+  },
+  "devDependencies": {
+    "browserify": "^10.0.0",
+    "istanbul-harmony": "0",
+    "mocha": "^2.0.0",
+    "mz": "^1.0.2",
+    "typescript": "^2.1.6"
+  },
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "mocha --harmony",
+    "build": "./node_modules/.bin/tsc -p .",
+    "test-cov": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot",
+    "test-travis": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelDiguet/sq.git"
+  },
+  "keywords": [
+    "transaction",
+    "nodejs",
+    "co"
+  ],
+  "author": "Michaël Diguet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelDiguet/sq/issues"
+  },
+  "homepage": "https://github.com/MichaelDiguet/sq#readme"
+}
