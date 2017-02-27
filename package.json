@@ -8,18 +8,19 @@
     "co": "MichaelDiguet/co"
   },
   "devDependencies": {
-    "browserify": "^10.0.0",
     "istanbul-harmony": "0",
-    "mocha": "^2.0.0",
-    "mz": "^1.0.2",
-    "typescript": "^2.1.6"
+    "@types/mocha": "^2.2.39",
+    "mocha": "^3.2.0",
+    "typescript": "^2.1.6",
+    "@types/should": "^8.1.30",
+    "should": "^11.2.0"
   },
   "scripts": {
     "pretest": "npm run build",
-    "test": "mocha --harmony",
+    "test": "mocha --harmony ./dist/test/**/*.test.js",
     "build": "./node_modules/.bin/tsc -p .",
-    "test-cov": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot",
-    "test-travis": "node --harmony node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot",
+    "test-cov": "node --harmony ./dist/test/**/*.test.js node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter dot",
+    "test-travis": "node --harmony ./dist/test/**/*.test.js node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --reporter dot",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -27,14 +28,15 @@
     "url": "git+https://github.com/MichaelDiguet/sq.git"
   },
   "keywords": [
-    "transaction",
-    "nodejs",
-    "co"
+    "yelloan",
+    "exercises",
+    "co",
+    "sq"
   ],
   "author": "Michaël Diguet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MichaelDiguet/sq/issues"
+    "url": "https://github.com/yelloan/exercises/issues"
   },
-  "homepage": "https://github.com/MichaelDiguet/sq#readme"
+  "homepage": "https://github.com/yelloan/exercises#readme"
 }
