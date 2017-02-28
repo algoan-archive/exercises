@@ -1,5 +1,6 @@
 import { Human, DevelopmentState } from '../src/Human';
 import * as assert from 'assert';
+import * as co from 'co';
 
 describe('Tests for exercises', () => {
 
@@ -22,6 +23,15 @@ describe('Tests for exercises', () => {
     return human.growFromChildToTeen().then(() => {
       assert.equal(DevelopmentState.Teenager, human.developmentState);
     });
+  })
+
+  it('should work if the code is written asynchronously, with Co', () => {
+    let human = new Human();
+    co(function*(){
+      yield human.growFromChildToTeen();
+      assert.equal(DevelopmentState.Teenager, human.developmentState);
+
+    })
   })
 
 });

@@ -37,6 +37,9 @@ export class Human {
     }
   }
 
+
 };
+
+
 
 export default Human;
